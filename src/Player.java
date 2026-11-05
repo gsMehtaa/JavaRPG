@@ -9,4 +9,7 @@ public class Player {
         this.health = health;
         this.attackDamage = attackDamage;
     }
+    public static void displayStats(){
+
+    }
 }
