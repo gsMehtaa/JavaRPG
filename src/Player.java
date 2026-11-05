@@ -9,7 +9,9 @@ public class Player {
         this.health = health;
         this.attackDamage = attackDamage;
     }
-    public static void displayStats(){
-
+    public void displayStats(){
+        System.out.println(name);
+        System.out.println("HP: " + health);
+        System.out.println("DMG " + attackDamage);
     }
 }
