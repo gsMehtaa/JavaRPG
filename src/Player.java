@@ -4,7 +4,7 @@ public class Player {
     private int health;
     private int attackDamage;
 
-    private int damage = 0;
+
 
     public Player(String name, int health, int attackDamage){
         this.name = name;
@@ -17,16 +17,19 @@ public class Player {
         System.out.println("DMG " + attackDamage);
     }
     public void takeDamage(int damage){
+       if(damage < 0){
+           System.out.println("DAMAGE MUST BE POSITIVE");
+       }
+       else if(health == 0){
+           System.out.println(name + " is already 0 HP");
+       }
+       else if(damage > health){
+           health = 0;
+       }
+       else{
+           health = health - damage;
+       }
 
-        if(health > 0 && health > damage){
-            health  = health - damage;
-        }
-        else if(health == 0){
-            System.out.println(name + " is already 0 HP");
-        }
-        else if(damage > health){
-            health = 0;
-        }
 
 
     }
