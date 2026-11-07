@@ -17,7 +17,7 @@ public class Player {
         System.out.println("DMG " + attackDamage);
     }
     public void takeDamage(int damage){
-       if(damage < 0){
+       if(damage <= 0){
            System.out.println("DAMAGE MUST BE POSITIVE");
        }
        else if(health == 0){
@@ -29,8 +29,16 @@ public class Player {
        else{
            health = health - damage;
        }
-
-
-
     }
+
+    public void useBandage(){
+        if(health > 0 && health <75) {      //bandage heals only upto 75 hp, 15 hp at a time.
+            health = health + 15;
+        }
+        else{
+            System.out.println("CANT USE BANDAGE");
+        }
+    }
+
+
 }
