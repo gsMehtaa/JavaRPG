@@ -39,6 +39,16 @@ public class Player {
             System.out.println("CANT USE BANDAGE");
         }
     }
-
+    public void useMedkit(){
+        if(health > 0 && health < 100){ //medkit heals to 100 hp.
+            health = 100;
+        }
+        else if(health == 100){
+            System.out.println("ALREADY FULL HP");
+        }
+        else{
+            System.out.println("CAN'T HEAL");
+        }
+    }
 
 }
