@@ -32,9 +32,13 @@ public class Player {
     }
 
     public void useBandage(){
-        if(health > 0 && health <75) {      //bandage heals only upto 75 hp, 15 hp at a time.
+        if(health + 15 > 75){
+            health = 75;
+        }
+        else if(health > 0 && health <75) {      //bandage heals only upto 75 hp, 15 hp at a time.
             health = health + 15;
         }
+
         else{
             System.out.println("CANT USE BANDAGE");
         }
@@ -49,6 +53,9 @@ public class Player {
         else{
             System.out.println("CAN'T HEAL");
         }
+    }
+    public void maxHealth(){
+
     }
 
 }
