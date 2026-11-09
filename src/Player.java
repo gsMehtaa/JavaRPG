@@ -3,6 +3,7 @@ public class Player {
     private String name;
     private int health;
     private int attackDamage;
+    private int maxHealth;
 
 
 
@@ -54,8 +55,6 @@ public class Player {
             System.out.println("CAN'T HEAL");
         }
     }
-    public void maxHealth(){
 
-    }
 
 }
