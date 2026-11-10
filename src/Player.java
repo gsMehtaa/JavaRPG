@@ -1,43 +1,47 @@
+import java.util.Currency;
+
 public class Player {
 
     private String name;
-    private int health;
+    private int currentHP;
     private int attackDamage;
-    private int maxHealth;
+    private int maxHP;
 
 
 
-    public Player(String name, int health, int attackDamage){
+    public Player(String name, int currentHP, int attackDamage, int maxHP){
         this.name = name;
-        this.health = health;
+        this.currentHP = currentHP;
         this.attackDamage = attackDamage;
+        this.maxHP = maxHP;
+
     }
     public void displayStats(){
         System.out.println(name);
-        System.out.println("HP: " + health);
+        System.out.println("HP: " + currentHP);
         System.out.println("DMG " + attackDamage);
     }
     public void takeDamage(int damage){
        if(damage <= 0){
            System.out.println("DAMAGE MUST BE POSITIVE");
        }
-       else if(health == 0){
+       else if(currentHP == 0){
            System.out.println(name + " is already 0 HP");
        }
-       else if(damage > health){
-           health = 0;
+       else if(damage > currentHP){
+           currentHP = 0;
        }
        else{
-           health = health - damage;
+           currentHP = currentHP - damage;
        }
     }
 
     public void useBandage(){
-        if(health + 15 > 75){
-            health = 75;
+        if(currentHP + 15 > 75){
+            currentHP = 75;
         }
-        else if(health > 0 && health <75) {      //bandage heals only upto 75 hp, 15 hp at a time.
-            health = health + 15;
+        else if(currentHP > 0 && currentHP <75) {      //bandage heals only upto 75 hp, 15 hp at a time.
+            currentHP = currentHP + 15;
         }
 
         else{
@@ -45,10 +49,10 @@ public class Player {
         }
     }
     public void useMedkit(){
-        if(health > 0 && health < 100){ //medkit heals to 100 hp.
-            health = 100;
+        if(currentHP > 0 && currentHP < 100){ //medkit heals to 100 hp.
+            currentHP = 100;
         }
-        else if(health == 100){
+        else if(currentHP == 100){
             System.out.println("ALREADY FULL HP");
         }
         else{
