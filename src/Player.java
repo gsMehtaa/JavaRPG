@@ -10,16 +10,25 @@ public class Player {
 
 
     public Player(String name, int currentHP, int attackDamage, int maxHP){
+
+        if (currentHP > maxHP){
+            this.currentHP = maxHP;
+        }
+        else if(currentHP < 0) {
+        this.currentHP = 0;
+        }
+        else {
+            this.currentHP = currentHP;
+        }
         this.name = name;
-        this.currentHP = currentHP;
         this.attackDamage = attackDamage;
         this.maxHP = maxHP;
 
     }
     public void displayStats(){
         System.out.println(name);
-        System.out.println("HP: " + currentHP);
-        System.out.println("DMG " + attackDamage);
+        System.out.println("HP: " + currentHP + "/" + maxHP);
+        System.out.println("DMG: " + attackDamage);
     }
     public void takeDamage(int damage){
        if(damage <= 0){
