@@ -1,4 +1,3 @@
-import java.util.Currency;
 
 public class Player {
 
@@ -50,12 +49,13 @@ public class Player {
             System.out.println("CANT USE BANDAGE");
         }
     }
+
     public void useMedkit(){
-        if(currentHP > 0 && currentHP < 100){ //medkit heals to 100 hp.
-            currentHP = 100;
+        if(currentHP > 0 && currentHP < maxHP){ //medkit heals to max hp.
+            currentHP = maxHP;
         }
-        else if(currentHP == 100){
-            System.out.println("ALREADY FULL HP");
+        else if(currentHP == maxHP){
+            System.out.println("ALREADY MAX HP");
         }
         else{
             System.out.println("CAN'T HEAL");
