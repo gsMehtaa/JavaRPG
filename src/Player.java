@@ -4,8 +4,9 @@ public class Player {
 
     private String name;
     private int currentHP;
-    private int attackDamage;
     private int maxHP;
+    private int attackDamage;
+
 
 
 
@@ -37,13 +38,14 @@ public class Player {
     }
 
     public void useBandage(){
-        if(currentHP + 15 > 75){
-            currentHP = 75;
-        }
-        else if(currentHP > 0 && currentHP <75) {      //bandage heals only upto 75 hp, 15 hp at a time.
-            currentHP = currentHP + 15;
-        }
-
+       if(currentHP > 0 && currentHP < 75){
+           if (currentHP + 15 > 75) {
+               currentHP = 75;
+           }
+          else{
+              currentHP = currentHP + 15;
+           }
+       }
         else{
             System.out.println("CANT USE BANDAGE");
         }
