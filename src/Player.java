@@ -65,4 +65,22 @@ public class Player {
             System.out.println("CAN'T HEAL");
         }
     }
+
+
+    public void attack(Player enemy) {
+
+        if (currentHP <= 0) {
+            System.out.println(name + " cannot attack!");
+            return;
+        }
+
+        if (enemy.currentHP <= 0) {
+            System.out.println(enemy.name + " is already defeated!");
+            return;
+        }
+
+        System.out.println(name + " attacks " + enemy.name + "!");
+        enemy.takeDamage(attackDamage);
+    }
+
 }
