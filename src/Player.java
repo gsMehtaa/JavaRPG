@@ -1,16 +1,10 @@
-
 public class Player {
-
     private String name;
     private int currentHP;
     private int maxHP;
     private int attackDamage;
 
-
-
-
     public Player(String name, int currentHP, int attackDamage, int maxHP){
-
         if (currentHP > maxHP){
             this.currentHP = maxHP;
         }
@@ -23,13 +17,14 @@ public class Player {
         this.name = name;
         this.attackDamage = attackDamage;
         this.maxHP = maxHP;
-
     }
+
     public void displayStats(){
         System.out.println(name);
         System.out.println("HP: " + currentHP + "/" + maxHP);
         System.out.println("DMG: " + attackDamage);
     }
+
     public void takeDamage(int damage){
        if(damage <= 0){
            System.out.println("DAMAGE MUST BE POSITIVE");
@@ -44,7 +39,7 @@ public class Player {
            currentHP = currentHP - damage;
        }
     }
-
+//build an attacking function and make players attack each other/enemies.
     public void useBandage(){
        if(currentHP > 0 && currentHP < 75){
            if (currentHP + 15 > 75) {
@@ -70,6 +65,4 @@ public class Player {
             System.out.println("CAN'T HEAL");
         }
     }
-
-
 }
