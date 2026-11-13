@@ -67,20 +67,27 @@ public class Player {
     }
 
 
-    public void attack(Player enemy) {
-
-        if (currentHP <= 0) {
-            System.out.println(name + " cannot attack!");
+    public void displayHealthBar() {
+        if (maxHP <= 0) {
+            System.out.println("Invalid max HP");
             return;
         }
 
-        if (enemy.currentHP <= 0) {
-            System.out.println(enemy.name + " is already defeated!");
-            return;
+        int bars = (currentHP * 10) / maxHP;
+
+        System.out.print(name + " HP: [");
+
+        for (int i = 0; i < 10; i++) {
+            if (i < bars) {
+                System.out.print("█");
+            } else {
+                System.out.print("-");
+            }
         }
 
-        System.out.println(name + " attacks " + enemy.name + "!");
-        enemy.takeDamage(attackDamage);
+        System.out.println("] " + currentHP + "/" + maxHP);
     }
+
+
 
 }
