@@ -88,6 +88,11 @@ public class Player {
         System.out.println("] " + currentHP + "/" + maxHP);
     }
 
+    public boolean isAlive() {
+        return currentHP > 0;
+    }
+
+
 
 
 }
