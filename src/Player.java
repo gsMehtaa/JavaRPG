@@ -66,30 +66,8 @@ public class Player {
         }
     }
 
+    public void attack(Player player){
 
-    public void displayHealthBar() {
-        if (maxHP <= 0) {
-            System.out.println("Invalid max HP");
-            return;
-        }
-
-        int bars = (currentHP * 10) / maxHP;
-
-        System.out.print(name + " HP: [");
-
-        for (int i = 0; i < 10; i++) {
-            if (i < bars) {
-                System.out.print("█");
-            } else {
-                System.out.print("-");
-            }
-        }
-
-        System.out.println("] " + currentHP + "/" + maxHP);
-    }
-
-    public boolean isAlive() {
-        return currentHP > 0;
     }
 
 
