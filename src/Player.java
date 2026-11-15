@@ -69,7 +69,7 @@ public class Player {
     public void attack(Player player){
 
     }
-
+    //Goal: Make Reyna attack Jett using Reyna's attack damage.
 
 
 
