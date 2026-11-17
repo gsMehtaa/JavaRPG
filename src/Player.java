@@ -67,7 +67,9 @@ public class Player {
     }
 
     public void attack(Player player){
-
+        if(attackDamage= 0){
+            maxHP = maxHP;
+        }
     }
     //Goal: Make Reyna attack Jett using Reyna's attack damage.
 
