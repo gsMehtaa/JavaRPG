@@ -66,12 +66,19 @@ public class Player {
         }
     }
 
-    public void attack(Player player){
-        if(attackDamage= 0){
-            maxHP = maxHP;
+    public void attack(Player enemy) {
+
+        if (currentHP <= 0) {
+            System.out.println(name + " cannot attack because they are defeated!");
+        }
+        else if (enemy.currentHP <= 0) {
+            System.out.println(enemy.name + " is already defeated!");
+        }
+        else {
+            System.out.println(name + " attacks " + enemy.name + "!");
+            enemy.takeDamage(attackDamage);
         }
     }
-    //Goal: Make Reyna attack Jett using Reyna's attack damage.
 
 
 
