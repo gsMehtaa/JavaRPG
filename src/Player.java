@@ -79,7 +79,38 @@ public class Player {
             enemy.takeDamage(attackDamage);
         }
     }
+    public int getCurrentHP() {
+        return currentHP;
+    }
 
+
+    public void takeDamage(int damage) {
+
+        if (damage <= 0) {
+            System.out.println("Damage must be positive!");
+            return;
+        }
+
+        if (currentHP <= 0) {
+            System.out.println(name + " is already defeated!");
+            return;
+        }
+
+        int dodgeChance = (int)(Math.random() * 100) + 1;
+
+        if (dodgeChance <= 15) {
+            System.out.println(name + " DODGED the attack!");
+            return;
+        }
+
+        if (damage >= currentHP) {
+            currentHP = 0;
+        } else {
+            currentHP -= damage;
+        }
+
+        System.out.println(name + " now has " + currentHP + " HP!");
+    }
 
 
 }
