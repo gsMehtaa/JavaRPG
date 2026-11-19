@@ -83,7 +83,6 @@ public class Player {
         return currentHP;
     }
 
-
     public void takeDamage(int damage) {
 
         if (damage <= 0) {
@@ -111,6 +110,7 @@ public class Player {
 
         System.out.println(name + " now has " + currentHP + " HP!");
     }
+
 
 
 }
